@@ -20,8 +20,11 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
         className={"fixed inset-0 md:w-2/3 lg:w-1/2 m-auto h-min"}
       >
         <article className="flex flex-col items-center justify-center max-h-[75%] max-w-5xl mx-4 md:mx-auto bg-cyan-500 dark:bg-gray-700 text-cyan-900 dark:text-white shadow-lg dark:shadow-white/50 rounded-lg duration-200 overflow-hidden">
-          <h3 className="text-white text-center bg-cyan-500 dark:bg-gray-700 p-4 duration-200">{t('gemini_api_key_entry')}</h3>
+          <h3 className="text-white text-center bg-cyan-500 dark:bg-gray-700 p-4 duration-200">AI Website Builder - Create A Website In Minutes</h3>
           <form ref={inputRef} className="flex flex-col items-center max-h-full w-full p-4 bg-cyan-50 dark:bg-gray-900 text-cyan-900 dark:text-white duration-200 overflow-y-auto overflow-x-hidden md:overflow-hidden" onSubmit={saveUserData}>
+          <h2 class="text-center text-lg font-semibold mb-3">SWAG: AI Website Generator</h2>
+          <p class="text-center text-sm mb-4">Enter your token details, and SWAG will generate a website for you. No coding required!</p>
+          <p class="text-center text-sm mb-4">Created by Richie.eth. Buy $SWAG to support me. Not financial advice !!!</p>
             <input
               type="text"
               className="hidden input-name w-full m-1 p-2 border border-cyan-800 dark:border-gray-100 bg-cyan-50/25 dark:bg-gray-900/25 text-base text-black dark:text-white rounded-md shadow-inner dark:shadow-white/50 duration-200"
@@ -58,23 +61,22 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
               </button>
             </div>
             <br />
-            <p className="text-center text-sm text-cyan-800 dark:text-gray-200 duration-200">
-              {t('obtaining_api_key')}<a className="underline text-blue-700 dark:text-blue-300 hover:text-blue-900 dark:hover:text-blue-50 active:text-violet-700 duration-200" href="https://ai.google.dev/pricing" target="_blank" rel="noopener noreferrer">{t('gemini_site')}</a>.
-            </p>
-            <p className="text-center text-sm text-yellow-800 dark:text-orange-200 duration-200">{t('gemini_ai_usage_note')}</p>
+
             <Listbox value={isDataWillBeSaved} onChange={changeUserDataSetting} className="w-full bg-cyan-50 dark:bg-gray-900 text-cyan-900 dark:text-white duration-200">
               <Listbox.Options static className="max-h-full flex items-center justify-center">
                 <Listbox.Option as="label" className={"cursor-pointer p-2"}>
                   <input
                     type="checkbox"
-                    className="app-usage-confirmation-checkbox accent-cyan-600 dark:accent-gray-600 h-5 w-5 duration-200"
-                    checked={isDataWillBeSaved}
+                    className="hidden app-usage-confirmation-checkbox accent-cyan-600 dark:accent-gray-600 h-5 w-5 duration-200"
+                    checked={true}
                     onChange={changeUserDataSetting} />
-                  <span className="ml-2 text-base md:text-lg">{t('save_user_data')}</span>
                 </Listbox.Option>
               </Listbox.Options>
             </Listbox>
+            <div className="flex">
             <button type="submit" className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200">{t('enter')}</button>
+            <button type="button" className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200">{t('Buy $SWAG')}</button>
+            </div>
           </form>
         </article>
       </Transition>

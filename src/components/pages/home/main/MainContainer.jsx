@@ -30,7 +30,13 @@ class MainContainer extends React.Component {
       isEditing: false,
       isGenerating: false,
       isSidebarOpened: false,
-      currentPrompt: '',
+      currentPrompt: `Token Name: Your token name
+Token Description: Short description about the token and its use
+Token Paragraph:
+Paragraph 1: A brief paragraph explaining the purpose of the AI website generator
+Paragraph 2: A brief paragraph explaining how the tool works
+Button 1: Text for the first button, e.g., 'Pump.Fun'
+Button 2: Text for the second button, e.g., 'Dexscreener'"`,
       lastPrompt: '',
       promptId: 0,
       chunkedPromptsData: [],
@@ -59,7 +65,7 @@ class MainContainer extends React.Component {
   componentDidMount() {
     this.setState({ responseResult: `<html lang="en">
 <head>
-  <title>Peanut Token</title>
+  <title>SWAG Token AI Website Builder - Create A Website In Minutes</title>
   <style>
     body {
       background-color: #fff8db;
@@ -115,10 +121,12 @@ class MainContainer extends React.Component {
       color: #555;
     }
 
-    .button-container {
-      display: flex;
-      gap: 10px;
-    }
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+}
 
     button {
       background-color: #ff6347;
@@ -163,22 +171,14 @@ class MainContainer extends React.Component {
   <div class="container">
 
   <div>
-    <h1>$KOKO - JUST A MEME</h1>
-    <h2>Peanut Token</h2>
-    <p>Over 2,000,000,000 views on YouTube - legendary viral chicken song.</p>
-    <p>Launched on pump.fun.<br>$12k liquidity will be provided to Raydium and Burned.</p>
-    <p>Fair-launch, no rugs, no BS - JUST A MEME.</p>
+<h1>SWAG - The First AI Website Generator on Solana</h1>
+<h2>Created by Richie.eth</h2>
+<p>SWAG aims to empower developers on Pump.Fun with a tool to easily create high-quality websites for their tokens.</p>
+<p>Simply enter a description of what your token is about, and SWAG will handle the rest, generating a professional website with zero coding required!</p>
     <div class="button-container">
-      <button>BUY NOW - RAYDIUM</button>
+      <button>PUMP.FUN</button>
       <button>DEXSCREENER</button>
-      <button>TWITTER</button>
-      <button>DEXTOOLS</button>
-      <button>TELEGRAM</button>
     </div>
-  </div>
-<div style="width: 100%; padding:20px">
-  <iframe height="500" style="width: 100%;" src="https://dexscreener.com/solana/FS7t6ChHTQhLC4gTKDdtUhfJqDwRD29NjxUCBaH9Nrk6?embed=1&theme=dark"></iframe>
-</div>
   </div>
 </body>
 </html>
@@ -609,6 +609,47 @@ class MainContainer extends React.Component {
     let inputPrompt = ''
     if (this.state.selectedModel.isSupportSystemInstructions) inputPrompt = userPrompt
     else inputPrompt = `${this.props.t('system_instructions')} ${userPrompt}`
+    inputPrompt = `Generate an HTML page template for a website that is an AI website generator. The page should contain the following structure:
+
+Head:
+
+Set the <title> to a placeholder like 'Token AI Website Builder - Create A Website In Minutes'.
+Add a <style> tag to include the following default theme colors and background colors:
+Background color for the body: Light yellow (#fff8db).
+Theme color for buttons and accents: Coral (#ff6347).
+Darker shade for hover effects: (#e5533b).
+Light cyan accent for the container and text when dark mode is toggled.
+Body:
+
+Container:
+
+Create a container that will hold all content inside it. This container should have a white background, padding, rounded corners, and a subtle box-shadow. The container should be centered and should have a light cyan accent border or background when dark mode is toggled.
+Token Name:
+
+Include a header <h1> element with placeholder text for the token name, styled in a bright coral color (#ff6347). The text should have a text-shadow of light yellow (#fdd835).
+Token Description:
+
+Add a subtitle <h2> element with placeholder text for the creator or team, styled with a dark gray color.
+Token Paragraph:
+
+Add two paragraphs <p>, each describing the purpose of the tool and how it works. The first paragraph should explain the tool's purpose, and the second paragraph should explain how the tool functions, with medium gray text for a clear and readable layout.
+Buttons:
+
+Create a button container with two buttons:
+Button 1: A button with a coral background (#ff6347), white text, and smooth hover transitions.
+Button 2: A button with a slightly darker coral background (#e5533b), white text, and smooth hover transitions.
+Layout and Flexbox:
+
+The layout should be responsive, centered using flexbox, with appropriate spacing between elements. Ensure that all content is centered both vertically and horizontally.
+Styling:
+
+Use a playful font like 'Comic Sans MS' for the content.
+Set the body background color to a soft yellow (#fff8db).
+Set button backgrounds to the theme color (coral: #ff6347), with hover effects that transition to a slightly darker color (#e5533b).
+The container should have a soft shadow for depth.
+Buttons should have smooth transitions, scaling slightly on hover.
+The page layout should be responsive and neatly centered with flexbox. If the user prefers dark mode, provide a dark background with lighter text and accent colors.` + inputPrompt
+
     try {
       const { totalTokens } = await model.countTokens(inputPrompt)
       if (totalTokens > 8192) {
