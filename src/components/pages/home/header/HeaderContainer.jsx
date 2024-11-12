@@ -15,7 +15,7 @@ const HeaderContainer = ({ t, changeLanguage, resetUserData, setDisplayMode, isD
 <a href="#" title="Repository" target="_blank" rel="noreferrer noopener" class="block p-3 mb-3 bg-cyan-500 text-white rounded-md shadow-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 duration-200 transform hover:scale-105">
   Dexscreener
 </a>
-<a href="#" title="Repository" target="_blank" rel="noreferrer noopener" class="block p-3 mb-3 bg-cyan-500 text-white rounded-md shadow-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 duration-200 transform hover:scale-105">
+<a href="https://x.com/intent/post?text=%24SWAGAI+-%20AI%20Website%20Generator%0ASimply%20enter%20a%20description%20of%20what%20your%20token%20is%20about%2C%20and%20SWAGAI%20will%20handle%20the%20rest%2C%20generating%20a%20professional%20website%20with%20zero%20coding%20required%21%0A%0Aswagai-solana.vercel.app" title="Repository" target="_blank" rel="noreferrer noopener" class="block p-3 mb-3 bg-cyan-500 text-white rounded-md shadow-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 duration-200 transform hover:scale-105">
   Share
 </a>
 <a href="https://t.me/Krypto_Richie" title="Repository" target="_blank" rel="noreferrer noopener" class="block p-3 mb-3 bg-cyan-500 text-white rounded-md shadow-md hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 duration-200 transform hover:scale-105">

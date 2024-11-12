@@ -35,8 +35,9 @@ Token Description: Short description about the token and its use
 Token Paragraph:
 Paragraph 1: A brief paragraph explaining the purpose of the AI website generator
 Paragraph 2: A brief paragraph explaining how the tool works
-Button 1: Text for the first button, e.g., 'Pump.Fun'
-Button 2: Text for the second button, e.g., 'Dexscreener'"`,
+Contract Address: 0x1234567890abcdef1234567890abcdef12345678
+
+"`,
       lastPrompt: '',
       promptId: 0,
       chunkedPromptsData: [],
@@ -606,49 +607,109 @@ Button 2: Text for the second button, e.g., 'Dexscreener'"`,
   }
   
   async postPrompt(model, userPrompt, inputImages) {
+    const themes = [
+      'Background color for the body: Light yellow (#fff8db). Theme color for buttons and accents: Coral (#ff6347). Darker shade for hover effects: (#e5533b). Light cyan accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light navy (#1e2a47). Theme color for buttons and accents: Deep sea green (#2f8b8b). Darker shade for hover effects: (#1a6e6e). Soft cyan accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft peach (#ffdfbb). Theme color for buttons and accents: Sunset orange (#ff7f50). Darker shade for hover effects: (#ff5f36). Light yellow accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light lavender (#e3d9f5). Theme color for buttons and accents: Royal purple (#6a0dad). Darker shade for hover effects: (#4b0082). Light pink accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft mint (#c8f7f1). Theme color for buttons and accents: Mint green (#98ff98). Darker shade for hover effects: (#66cc66). Pale turquoise accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pale peach (#ffdab9). Theme color for buttons and accents: Tangerine (#ff6600). Darker shade for hover effects: (#e65c00). Light coral accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light gray (#d3d3d3). Theme color for buttons and accents: Slate blue (#6a5acd). Darker shade for hover effects: (#4b3b6a). Light purple accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft blush (#f8d7d2). Theme color for buttons and accents: Rose red (#d50032). Darker shade for hover effects: (#9c0031). Light mauve accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light beige (#f5f5dc). Theme color for buttons and accents: Forest green (#228b22). Darker shade for hover effects: (#006400). Pale yellow accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light sky blue (#87cefa). Theme color for buttons and accents: Sea blue (#4682b4). Darker shade for hover effects: (#355e6f). Light green accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft sand (#f4e1d2). Theme color for buttons and accents: Warm brown (#a52a2a). Darker shade for hover effects: (#7f1f1f). Light gold accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pastel green (#b0e57c). Theme color for buttons and accents: Olive green (#808000). Darker shade for hover effects: (#556b2f). Soft pink accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light lilac (#e1bee7). Theme color for buttons and accents: Purple orchid (#da70d6). Darker shade for hover effects: (#9b30b6). Light yellow accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Creamy white (#fff5e1). Theme color for buttons and accents: Goldenrod (#daa520). Darker shade for hover effects: (#b8860b). Soft blue accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pale pink (#fad0c4). Theme color for buttons and accents: Fuchsia (#d5008f). Darker shade for hover effects: (#9b007f). Light turquoise accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Sky gray (#a9a9a9). Theme color for buttons and accents: Electric blue (#7df9ff). Darker shade for hover effects: (#64c7c1). Soft purple accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft turquoise (#afeeee). Theme color for buttons and accents: Teal (#008080). Darker shade for hover effects: (#004d4d). Light coral accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pale yellow (#fff9c4). Theme color for buttons and accents: Buttercup yellow (#fbc02d). Darker shade for hover effects: (#f57f17). Light green accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light silver (#c0c0c0). Theme color for buttons and accents: Charcoal gray (#36454f). Darker shade for hover effects: (#2a2a2a). Soft amber accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Mint cream (#f5fffa). Theme color for buttons and accents: Deep green (#006400). Darker shade for hover effects: (#004d00). Light yellow-green accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light peach (#ffe4b5). Theme color for buttons and accents: Salmon (#fa8072). Darker shade for hover effects: (#e06666). Soft olive accent for the container and text when dark mode is toggled.'
+    ];
+    
+
+    const randomIndex = Math.floor(Math.random() * themes.length);
+
     let inputPrompt = ''
     if (this.state.selectedModel.isSupportSystemInstructions) inputPrompt = userPrompt
     else inputPrompt = `${this.props.t('system_instructions')} ${userPrompt}`
-    inputPrompt = `Generate an HTML page template for a website that is an AI website generator. The page should contain the following structure:
-
+    inputPrompt = themes[randomIndex] + `AI Website Generator Template
 Head:
 
-Set the <title> to a placeholder like 'Token AI Website Builder - Create A Website In Minutes'.
-Add a <style> tag to include the following default theme colors and background colors:
-Background color for the body: Light yellow (#fff8db).
-Theme color for buttons and accents: Coral (#ff6347).
-Darker shade for hover effects: (#e5533b).
-Light cyan accent for the container and text when dark mode is toggled.
+Set the <title> to "Token AI Website Builder - Create A Website In Minutes".
+Add a <style> tag to include the following:
+Body: Set the background color and text styling based on the selected theme.
+Container: Define a container with white background, padding, rounded corners, subtle box-shadow, and centered using flexbox. The container should also have a light cyan accent when dark mode is toggled.
 Body:
 
 Container:
 
-Create a container that will hold all content inside it. This container should have a white background, padding, rounded corners, and a subtle box-shadow. The container should be centered and should have a light cyan accent border or background when dark mode is toggled.
+Create a container that will hold all content inside it. The container should have:
+A white background, padding, rounded corners, and subtle box-shadow.
+It should be centered with a flexible layout (using flexbox).
 Token Name:
 
-Include a header <h1> element with placeholder text for the token name, styled in a bright coral color (#ff6347). The text should have a text-shadow of light yellow (#fdd835).
+Include a header <h1> element with placeholder text for the token name.
+The text should be styled using the theme's main color (e.g., Coral, Deep sea green, or Sunset orange).
+The text should have a text-shadow of a lighter version of the background color (e.g., light yellow, soft cyan, or pale yellow).
 Token Description:
 
 Add a subtitle <h2> element with placeholder text for the creator or team, styled with a dark gray color.
 Token Paragraph:
 
-Add two paragraphs <p>, each describing the purpose of the tool and how it works. The first paragraph should explain the tool's purpose, and the second paragraph should explain how the tool functions, with medium gray text for a clear and readable layout.
+Add two paragraphs <p>, each describing the purpose of the tool and how it works.
+The first paragraph should explain the tool's purpose.
+The second paragraph should explain how the tool functions.
+Use medium gray text for readability.
 Buttons:
+Create four buttons. Each button should trigger a JavaScript function to open the corresponding link in a new tab using the contract address provided by the child prompt. These buttons should have the following link formats:
 
-Create a button container with two buttons:
-Button 1: A button with a coral background (#ff6347), white text, and smooth hover transitions.
-Button 2: A button with a slightly darker coral background (#e5533b), white text, and smooth hover transitions.
+Each button should be styled with smooth transitions and hover effects. The buttons should be plain (no a tag) to avoid the browser’s default link styles.
+
+Button 1: A button with the theme’s main background color, white text, and smooth hover transitions.
+Link Format: https://pump.fun/coin/CONTRACT_ADDRESS
+
+Button 2: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
+Link Format: https://raydium.io/swap/?inputMint=sol&outputMint=CONTRACT_ADDRESS
+
+Button 3: A button with the theme’s main background color, white text, and smooth hover transitions.
+Link Format: https://jup.ag/swap/SOL-CONTRACT_ADDRESS
+
+Button 4: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
+Link Format: https://dexscreener.com/solana/CONTRACT_ADDRESS
+
+These buttons should be placed in the same line with a 5px gap between them, using flexbox for layout.
+
+Contract Address Input Box:
+
+Add an input box displaying a contract address (CONTRACT_ADDRESS).
+The input box should be readonly.
+Next to the input box, add a "Copy" button.
+The button should match the theme’s background color, white text, and should change to a darker shade on hover.
+Use JavaScript to copy the contract address to the clipboard when the "Copy" button is clicked.
+Optionally, show an alert or message indicating the contract address was copied to the clipboard.
+
+The input box and the "Copy" button should be placed side by side, with a 5px gap between them, using flexbox for layout.
+
 Layout and Flexbox:
 
 The layout should be responsive, centered using flexbox, with appropriate spacing between elements. Ensure that all content is centered both vertically and horizontally.
+The input box and the button should be placed side by side with some spacing.
 Styling:
 
 Use a playful font like 'Comic Sans MS' for the content.
-Set the body background color to a soft yellow (#fff8db).
-Set button backgrounds to the theme color (coral: #ff6347), with hover effects that transition to a slightly darker color (#e5533b).
+Set the body background color and button backgrounds based on the selected theme, ensuring smooth hover transitions.
 The container should have a soft shadow for depth.
 Buttons should have smooth transitions, scaling slightly on hover.
-The page layout should be responsive and neatly centered with flexbox. If the user prefers dark mode, provide a dark background with lighter text and accent colors.` + inputPrompt
+Ensure the page layout is responsive and neatly centered with flexbox.
+If the user prefers dark mode, the background should switch to a darker color with lighter text and accent colors.
+`
+
++ inputPrompt
 
     try {
       const { totalTokens } = await model.countTokens(inputPrompt)
