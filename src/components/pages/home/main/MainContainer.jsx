@@ -177,7 +177,8 @@ Contract Address: 0x1234567890abcdef1234567890abcdef12345678
 <p>SWAG aims to empower developers on Pump.Fun with a tool to easily create high-quality websites for their tokens.</p>
 <p>Simply enter a description of what your token is about, and SWAG will handle the rest, generating a professional website with zero coding required!</p>
     <div class="button-container">
-      <button>PUMP.FUN</button>
+      <button>RAYDIUM</button>
+      <button>JUPITER</button>
       <button>DEXSCREENER</button>
     </div>
   </div>
