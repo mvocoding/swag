@@ -75,7 +75,13 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
             </Listbox>
             <div className="flex">
             <button type="submit" className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200">{t('enter')}</button>
-            <button type="button" className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200">{t('Buy $SWAG')}</button>
+            <button
+  type="button"
+  className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200"
+  onClick={() => window.open('https://pump.fun/coin/7ihqJriVWVw78qpoadvttYKAqa3gHLvgbkW2aEkVpump', '_blank')}
+>
+  {t('Buy $SWAG')}
+</button>
             </div>
           </form>
         </article>
