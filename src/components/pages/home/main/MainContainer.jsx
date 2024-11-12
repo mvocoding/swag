@@ -664,29 +664,26 @@ Contract Address: 0x1234567890abcdef1234567890abcdef12345678
     if (this.state.selectedModel.isSupportSystemInstructions) inputPrompt = userPrompt
     else inputPrompt = `${this.props.t('system_instructions')} ${userPrompt}`
     inputPrompt = themes[randomIndex] + `AI Website Generator Template
+
 Head:
 
-Set the <title> to "Token AI Website Builder - Create A Website In Minutes".
+Set the <title> to "Token AI Website Builder - Create A Website In Minutes."
 Add a <style> tag to include the following:
 Body: Set the background color and text styling based on the selected theme.
-Container: Define a container with white background, padding, rounded corners, subtle box-shadow, and centered using flexbox. The container should also have a light cyan accent when dark mode is toggled.
+Container: Define a container with a white background, padding, rounded corners, subtle box-shadow, and centered using flexbox. The container should also have a light cyan accent when dark mode is toggled.
 Body:
 
 Container:
-
 Create a container that will hold all content inside it. The container should have:
 A white background, padding, rounded corners, and subtle box-shadow.
 It should be centered with a flexible layout (using flexbox).
 Token Name:
-
 Include a header <h1> element with placeholder text for the token name.
-The text should be styled using the theme's main color (e.g., Coral, Deep sea green, or Sunset orange).
+The text should be styled using the theme's main color (e.g., Coral, Deep Sea Green, or Sunset Orange).
 The text should have a text-shadow of a lighter version of the background color (e.g., light yellow, soft cyan, or pale yellow).
 Token Description:
-
 Add a subtitle <h2> element with placeholder text for the creator or team, styled with a dark gray color.
 Token Paragraph:
-
 Add two paragraphs <p>, each describing the purpose of the tool and how it works.
 The first paragraph should explain the tool's purpose.
 The second paragraph should explain how the tool functions.
@@ -694,46 +691,57 @@ Use medium gray text for readability.
 Buttons:
 Create four buttons. Each button should trigger a JavaScript function to open the corresponding link in a new tab using the contract address provided by the child prompt. These buttons should have the following link formats:
 
-Each button should be styled with smooth transitions and hover effects. The buttons should be plain (no a tag) to avoid the browser’s default link styles.
-
 Button 1: A button with the theme’s main background color, white text, and smooth hover transitions.
 Link Format: https://pump.fun/coin/CONTRACT_ADDRESS
-
 Button 2: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
 Link Format: https://raydium.io/swap/?inputMint=sol&outputMint=CONTRACT_ADDRESS
-
 Button 3: A button with the theme’s main background color, white text, and smooth hover transitions.
 Link Format: https://jup.ag/swap/SOL-CONTRACT_ADDRESS
-
 Button 4: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
 Link Format: https://dexscreener.com/solana/CONTRACT_ADDRESS
-
 These buttons should be placed in the same line with a 5px gap between them, using flexbox for layout.
 
 Contract Address Input Box:
-
 Add an input box displaying a contract address (CONTRACT_ADDRESS).
+
 The input box should be readonly.
 Next to the input box, add a "Copy" button.
+
 The button should match the theme’s background color, white text, and should change to a darker shade on hover.
 Use JavaScript to copy the contract address to the clipboard when the "Copy" button is clicked.
 Optionally, show an alert or message indicating the contract address was copied to the clipboard.
-
 The input box and the "Copy" button should be placed side by side, with a 5px gap between them, using flexbox for layout.
 
-Layout and Flexbox:
+"How to Buy" Section:
+Add a "How to Buy" section with clear, simple instructions for buying the token. This section should include:
 
+Background: Set a distinct background color, like a light pastel blue or soft gray, to visually separate it from the rest of the content.
+Title: "HOW TO BUY" in a large, bold, centered font, matching the theme's main color.
+Step 1: "Create a Wallet" with a description to download Phantom Wallet from the App Store or Google Play for mobile, or as a browser extension for desktop.
+Step 2: "Get Some SOL" with details on ensuring sufficient SOL in the wallet to swap , including options to purchase SOL within Phantom or via an exchange.
+Step 3: "Go to Pump.Fun" with instructions to go to pump.fun on Google Chrome or within the Phantom app, connect the wallet, paste token address, and confirm.
+Step 4: "Swap" with a reminder that no extra slippage setting is required, though slippage might be necessary during market volatility.
+Layout: Arrange each step with an icon or number on the left and text on the right for easy readability.
+
+Styling: Ensure each step is separated by sufficient space, with the text color matching medium gray and each step title bolded for emphasis.
+
+Add subtle box-shadow and padding to the section for additional visual separation.
+
+Layout and Flexbox:
 The layout should be responsive, centered using flexbox, with appropriate spacing between elements. Ensure that all content is centered both vertically and horizontally.
 The input box and the button should be placed side by side with some spacing.
 Styling:
-
 Use a playful font like 'Comic Sans MS' for the content.
+
 Set the body background color and button backgrounds based on the selected theme, ensuring smooth hover transitions.
+
 The container should have a soft shadow for depth.
+
 Buttons should have smooth transitions, scaling slightly on hover.
+
 Ensure the page layout is responsive and neatly centered with flexbox.
 
-Do not include any dark or light mode toggle buttons in the design. The page layout and theme should be based on the selected colors without providing a toggle for switching between dark and light modes.`
+Note: Do not include any dark or light mode toggle buttons in the design. The page layout and theme should be based on the selected colors without providing a toggle for switching between dark and light modes.`
 
 + inputPrompt
 
