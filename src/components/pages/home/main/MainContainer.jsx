@@ -628,8 +628,33 @@ Contract Address: 0x1234567890abcdef1234567890abcdef12345678
       'Background color for the body: Pale yellow (#fff9c4). Theme color for buttons and accents: Buttercup yellow (#fbc02d). Darker shade for hover effects: (#f57f17). Light green accent for the container and text when dark mode is toggled.',
       'Background color for the body: Light silver (#c0c0c0). Theme color for buttons and accents: Charcoal gray (#36454f). Darker shade for hover effects: (#2a2a2a). Soft amber accent for the container and text when dark mode is toggled.',
       'Background color for the body: Mint cream (#f5fffa). Theme color for buttons and accents: Deep green (#006400). Darker shade for hover effects: (#004d00). Light yellow-green accent for the container and text when dark mode is toggled.',
-      'Background color for the body: Light peach (#ffe4b5). Theme color for buttons and accents: Salmon (#fa8072). Darker shade for hover effects: (#e06666). Soft olive accent for the container and text when dark mode is toggled.'
+      'Background color for the body: Light peach (#ffe4b5). Theme color for buttons and accents: Salmon (#fa8072). Darker shade for hover effects: (#e06666). Soft olive accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft rose (#f8c0b7). Theme color for buttons and accents: Blush pink (#f8b0c0). Darker shade for hover effects: (#f08a8a). Light lilac accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light plum (#e1c6e1). Theme color for buttons and accents: Deep plum (#7d4174). Darker shade for hover effects: (#5a2c54). Light violet accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Lavender mist (#e7e6fa). Theme color for buttons and accents: Orchid purple (#da70d6). Darker shade for hover effects: (#b64c8a). Soft pastel blue accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pale lavender (#d9bbd9). Theme color for buttons and accents: Plum (#8e4585). Darker shade for hover effects: (#72304b). Soft pinkish peach accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Seafoam green (#9fe2bf). Theme color for buttons and accents: Aquamarine (#7fffd4). Darker shade for hover effects: (#4d8b72). Light peach accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Apricot (#fbce91). Theme color for buttons and accents: Tangerine (#ff6600). Darker shade for hover effects: (#e65c00). Soft salmon accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Snow white (#fffbf0). Theme color for buttons and accents: Crimson (#dc143c). Darker shade for hover effects: (#8b0000). Soft ruby accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Peach (#f7e7ce). Theme color for buttons and accents: Honeydew green (#f0fff0). Darker shade for hover effects: (#c1d3c1). Soft lavender accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Ivory (#fffff0). Theme color for buttons and accents: Chiffon yellow (#fffae1). Darker shade for hover effects: (#e4d09c). Soft marigold accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Misty rose (#ffe4e1). Theme color for buttons and accents: Strawberry red (#fc5c5c). Darker shade for hover effects: (#f44d4d). Soft rose accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light peach (#ffbfae). Theme color for buttons and accents: Peachy keen (#ff9966). Darker shade for hover effects: (#e67f45). Light amber accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Warm ivory (#fff4e6). Theme color for buttons and accents: Golden honey (#ffcc33). Darker shade for hover effects: (#e6b32c). Soft cream accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Summer yellow (#ffec99). Theme color for buttons and accents: Lemonade yellow (#f7e0a7). Darker shade for hover effects: (#e6c12f). Soft beige accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Pale peach (#fce3c3). Theme color for buttons and accents: Orange peel (#ff9e00). Darker shade for hover effects: (#e68a00). Soft apricot accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Lavender gray (#c8c7c7). Theme color for buttons and accents: Royal purple (#6a0dad). Darker shade for hover effects: (#5b0080). Soft lilac accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Powder blue (#b0e0e6). Theme color for buttons and accents: Teal (#008080). Darker shade for hover effects: (#006666). Soft seafoam accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Misty blue (#afb9c1). Theme color for buttons and accents: Aqua blue (#00ffff). Darker shade for hover effects: (#009999). Soft lilac accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light rose (#f7e3e5). Theme color for buttons and accents: Powder pink (#f0c3c1). Darker shade for hover effects: (#f7a7a5). Soft mint accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft taupe (#d8cfc4). Theme color for buttons and accents: Olive green (#808000). Darker shade for hover effects: (#556b2f). Soft ivory accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Dusty pink (#d8bfd8). Theme color for buttons and accents: Orchid purple (#da70d6). Darker shade for hover effects: (#9b30b6). Soft lavender accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Light mint (#bafbd7). Theme color for buttons and accents: Teal blue (#367588). Darker shade for hover effects: (#2d5d6b). Light peach accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Off-white (#f8f8f8). Theme color for buttons and accents: Slate gray (#708090). Darker shade for hover effects: (#2f4f4f). Light blue accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Soft blush (#f8c0b7). Theme color for buttons and accents: Coral (#ff7f50). Darker shade for hover effects: (#e65c00). Soft lemon yellow accent for the container and text when dark mode is toggled.',
+      'Background color for the body: Powder pink (#f9e3f1). Theme color for buttons and accents: Peach pink (#ffb6b9). Darker shade for hover effects: (#ff99b3). Soft orange accent for the container and text when dark mode is toggled.',
     ];
+    
     
 
     const randomIndex = Math.floor(Math.random() * themes.length);
@@ -706,8 +731,8 @@ Set the body background color and button backgrounds based on the selected theme
 The container should have a soft shadow for depth.
 Buttons should have smooth transitions, scaling slightly on hover.
 Ensure the page layout is responsive and neatly centered with flexbox.
-If the user prefers dark mode, the background should switch to a darker color with lighter text and accent colors.
-`
+
+Do not include any dark or light mode toggle buttons in the design. The page layout and theme should be based on the selected colors without providing a toggle for switching between dark and light modes.`
 
 + inputPrompt
 
