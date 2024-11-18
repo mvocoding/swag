@@ -82,6 +82,13 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
 >
   {t('Buy $BUBBLE')}
 </button>
+<button
+  type="button"
+  className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200"
+  onClick={() => window.open('https://x.com/BubbleAI_Sol', '_blank')}
+>
+  {t('Twitter')}
+</button>
             </div>
           </form>
         </article>
