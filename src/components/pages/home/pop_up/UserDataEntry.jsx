@@ -22,9 +22,9 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
         <article className="flex flex-col items-center justify-center max-h-[75%] max-w-5xl mx-4 md:mx-auto bg-cyan-500 dark:bg-gray-700 text-cyan-900 dark:text-white shadow-lg dark:shadow-white/50 rounded-lg duration-200 overflow-hidden">
           <h3 className="text-white text-center bg-cyan-500 dark:bg-gray-700 p-4 duration-200">AI Website Builder - Create A Website In Minutes</h3>
           <form ref={inputRef} className="flex flex-col items-center max-h-full w-full p-4 bg-cyan-50 dark:bg-gray-900 text-cyan-900 dark:text-white duration-200 overflow-y-auto overflow-x-hidden md:overflow-hidden" onSubmit={saveUserData}>
-          <h2 class="text-center text-lg font-semibold mb-3">SWAG: AI Website Generator</h2>
-          <p class="text-center text-sm mb-4">Enter your token details, and SWAG will generate a website for you. No coding required!</p>
-          <p class="text-center text-sm mb-4">Created by Richie.eth. Buy $SWAG to support me. Not financial advice !!!</p>
+          <h2 class="text-center text-lg font-semibold mb-3">BUBBLEAI: AI Website Generator</h2>
+          <p class="text-center text-sm mb-4">Enter your token details, and BUBBLE will generate a website for you. No coding required!</p>
+          <p class="text-center text-sm mb-4">Created by Richie.eth. Buy $BUBBLE to support me !!!</p>
             <input
               type="text"
               className="hidden input-name w-full m-1 p-2 border border-cyan-800 dark:border-gray-100 bg-cyan-50/25 dark:bg-gray-900/25 text-base text-black dark:text-white rounded-md shadow-inner dark:shadow-white/50 duration-200"
@@ -78,9 +78,9 @@ const UserDataEntry = ({ t, inputRef, isUserDataEntered, isFocused, isDataWillBe
             <button
   type="button"
   className="w-fit m-4 px-8 py-2 bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 active:bg-cyan-800 text-center text-white rounded-md shadow-md dark:shadow-white/50 duration-200"
-  onClick={() => window.open('https://dexscreener.com/solana/agdv9osfmdkm68evhzx5urreyuigwbnp7hlwyxmpwkpy', '_blank')}
+  onClick={() => window.open('#', '_blank')}
 >
-  {t('Buy $SWAG')}
+  {t('Buy $BUBBLE')}
 </button>
             </div>
           </form>

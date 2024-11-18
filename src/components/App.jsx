@@ -8,6 +8,11 @@ import NoPage from "./pages/empty/NoPage"
 import Swal from "sweetalert2"
 import FullPreviewPage from "./pages/full_preview/FullPreviewPage"
 
+const RedirectToHTML = (url) => {
+  window.location.href = url;  // This will navigate the browser to the specified URL
+  return null;  // Don't render anything in React
+};
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -201,6 +206,8 @@ class App extends React.Component {
     this.setState({ isFocused: true })
   }
 
+
+
   render() {
     return (
       <React.Fragment>
@@ -244,6 +251,12 @@ class App extends React.Component {
           }/>
           <Route path="/preview" element={<FullPreviewPage t={i18n.t}/>}/>
           <Route path="*" element={<NoPage t={i18n.t}/>}/>
+          
+          <Route path="/:page" element={({ match }) => {
+            const page = match.params.page;
+            return RedirectToHTML(`/${page}.html`);
+          }} />
+
         </Routes>
       </React.Fragment>
     )

@@ -31,10 +31,8 @@ class MainContainer extends React.Component {
       isGenerating: false,
       isSidebarOpened: false,
       currentPrompt: `Token Name: Your token name
-Token Description: Short description about the token and its use
 Token Paragraph:
 Paragraph 1: A brief paragraph explaining the purpose of the AI website generator
-Paragraph 2: A brief paragraph explaining how the tool works
 Contract Address: 0x1234567890abcdef1234567890abcdef12345678
 
 "`,
@@ -172,14 +170,13 @@ Contract Address: 0x1234567890abcdef1234567890abcdef12345678
   <div class="container">
 
   <div>
-<h1>SWAG - The First AI Website Generator on Solana</h1>
+<h1>BUBBLEAI - The First AI Website Generator on Solana</h1>
 <h2>Created by Richie.eth</h2>
-<p>SWAG aims to empower developers on Pump.Fun with a tool to easily create high-quality websites for their tokens.</p>
-<p>Simply enter a description of what your token is about, and SWAG will handle the rest, generating a professional website with zero coding required!</p>
+<p>BUBBLE aims to empower developers on Pump.Fun with a tool to easily create high-quality websites for their tokens.</p>
+<p>Simply enter a description of what your token is about, and BUBBLE will handle the rest, generating a professional website with zero coding required!</p>
     <div class="button-container">
-      <button>RAYDIUM</button>
-      <button>JUPITER</button>
-      <button>DEXSCREENER</button>
+      <button>Twitter</button>
+      <button>Buy BUBBLE</button>
     </div>
   </div>
 </body>
@@ -663,85 +660,75 @@ Contract Address: 0x1234567890abcdef1234567890abcdef12345678
     let inputPrompt = ''
     if (this.state.selectedModel.isSupportSystemInstructions) inputPrompt = userPrompt
     else inputPrompt = `${this.props.t('system_instructions')} ${userPrompt}`
-    inputPrompt = themes[randomIndex] + `AI Website Generator Template
+    inputPrompt = themes[randomIndex] + `Generate a detailed HTML page using Tailwind CSS with the following specifications:
 
 Head:
-
-Set the <title> to "Token AI Website Builder - Create A Website In Minutes."
-Add a <style> tag to include the following:
-Body: Set the background color and text styling based on the selected theme.
-Container: Define a container with a white background, padding, rounded corners, subtle box-shadow, and centered using flexbox. The container should also have a light cyan accent when dark mode is toggled.
+Set the <title> of the webpage to "Token AI Website Builder - Create A Website In Minutes."
+Add a <style> tag to customize the background gradient and typography. The gradient should be from purple to blue (#6b46c1 to #4299e1). The body text should be in white with a clean, sans-serif font such as Poppins.
 Body:
-
+Top Menu (Navigation Bar):
+Create a navigation bar that:
+Is fixed at the top of the page.
+Has a semi-transparent purple background (#9b4d96 with 80% opacity).
+Contains a logo on the left (styled with a font size of 1.25rem and bold text).
+Contains four menu links: "Home," "Features," "How to Buy," and "Contact."
+Each menu link should have a hover effect that changes the text color to yellow (#f6e05e).
 Container:
-Create a container that will hold all content inside it. The container should have:
-A white background, padding, rounded corners, and subtle box-shadow.
-It should be centered with a flexible layout (using flexbox).
+Add a container that will hold the main content of the page:
+The container should have a white background with 10% opacity (bg-white/10), a subtle box shadow, and rounded corners (rounded-xl).
+It should be centered using Tailwind’s flexbox utilities (flex flex-col justify-center items-center).
+Add padding (py-12 px-8) and apply a backdrop blur effect (backdrop-blur-lg).
 Token Name:
-Include a header <h1> element with placeholder text for the token name.
-The text should be styled using the theme's main color (e.g., Coral, Deep Sea Green, or Sunset Orange).
-The text should have a text-shadow of a lighter version of the background color (e.g., light yellow, soft cyan, or pale yellow).
+Inside the container, add an <h1> header element with placeholder text "Your Token Name."
+Style it with the theme’s main color (for example, text-yellow-300).
+Apply a subtle text shadow with a lighter version of the background color (e.g., text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5)).
 Token Description:
-Add a subtitle <h2> element with placeholder text for the creator or team, styled with a dark gray color.
-Token Paragraph:
-Add two paragraphs <p>, each describing the purpose of the tool and how it works.
-The first paragraph should explain the tool's purpose.
-The second paragraph should explain how the tool functions.
-Use medium gray text for readability.
-Buttons:
-Create four buttons. Each button should trigger a JavaScript function to open the corresponding link in a new tab using the contract address provided by the child prompt. These buttons should have the following link formats:
+Add a <h2> subtitle element for the token description.
+Style it with a white text color .
+Place it directly under the token name.
 
-Button 1: A button with the theme’s main background color, white text, and smooth hover transitions.
-Link Format: https://pump.fun/coin/CONTRACT_ADDRESS
-Button 2: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
-Link Format: https://raydium.io/swap/?inputMint=sol&outputMint=CONTRACT_ADDRESS
-Button 3: A button with the theme’s main background color, white text, and smooth hover transitions.
-Link Format: https://jup.ag/swap/SOL-CONTRACT_ADDRESS
-Button 4: A button with a slightly darker shade of the theme’s background color, white text, and smooth hover transitions.
-Link Format: https://dexscreener.com/solana/CONTRACT_ADDRESS
-These buttons should be placed in the same line with a 5px gap between them, using flexbox for layout.
+Buttons:
+Create four buttons, each linking to external pages. Each button should be styled as follows:
+
+Button 1: Link format https://pump.fun/coin/CONTRACT_ADDRESS with the main background color (bg-yellow-500), white text, and a smooth hover effect that darkens the background color (hover:bg-yellow-400).
+Button 2: Link format https://raydium.io/swap/?inputMint=sol&outputMint=CONTRACT_ADDRESS with a slightly darker yellow background (bg-yellow-400), white text, and hover effect.
+Button 3: Link format https://jup.ag/swap/SOL-CONTRACT_ADDRESS with the main yellow background (bg-yellow-500) and white text.
+Button 4: Link format https://dexscreener.com/solana/CONTRACT_ADDRESS with a darker yellow background (bg-yellow-400), white text.
+The buttons should be displayed in a flex row with 5px gap between them (gap-4).
 
 Contract Address Input Box:
-Add an input box displaying a contract address (CONTRACT_ADDRESS).
+Create an input box displaying the contract address (CONTRACT_ADDRESS).
+Make the input box full width
+the text color inside the input is black
+Make it readonly and use a background that’s slightly transparent (bg-white/20).
+Add a "Copy" button next to the input box that:
+Copies the contract address to the clipboard using JavaScript.
+The button should match the theme’s background color (bg-yellow-500), with white text and a hover effect.
+The input box and the button should be aligned side by side with a 5px gap using flexbox.
+How to Buy Section:
+Add a section titled "How to Buy":
 
-The input box should be readonly.
-Next to the input box, add a "Copy" button.
+Background: A soft pastel blue or light gray background (bg-purple-800/80).
+Add a title <h2> for the section, centered with bold text and the theme’s main color (text-yellow-300).
+Inside this section, create a numbered list of steps for buying the token:
 
-The button should match the theme’s background color, white text, and should change to a darker shade on hover.
-Use JavaScript to copy the contract address to the clipboard when the "Copy" button is clicked.
-Optionally, show an alert or message indicating the contract address was copied to the clipboard.
-The input box and the "Copy" button should be placed side by side, with a 5px gap between them, using flexbox for layout.
+Step 1: "Create a Wallet" with instructions to download Phantom Wallet from the App Store or Google Play for mobile, or as a browser extension for desktop.
+Step 2: "Get Some SOL" with details on ensuring sufficient SOL in the wallet to swap tokens.
+Step 3: "Go to Pump.Fun" with instructions to visit the website, connect the wallet, and paste the token address.
+Step 4: "Swap" with instructions about the swapping process and slippage settings.
+Each step should include a number inside a circular background (bg-yellow-300 text-black font-bold), and the descriptions should be to the right. Use flexbox for the layout.
 
-"How to Buy" Section:
-Add a "How to Buy" section with clear, simple instructions for buying the token. This section should include:
-
-Background: Set a distinct background color, like a light pastel blue or soft gray, to visually separate it from the rest of the content.
-Title: "HOW TO BUY" in a large, bold, centered font, matching the theme's main color.
-Step 1: "Create a Wallet" with a description to download Phantom Wallet from the App Store or Google Play for mobile, or as a browser extension for desktop.
-Step 2: "Get Some SOL" with details on ensuring sufficient SOL in the wallet to swap , including options to purchase SOL within Phantom or via an exchange.
-Step 3: "Go to Pump.Fun" with instructions to go to pump.fun on Google Chrome or within the Phantom app, connect the wallet, paste token address, and confirm.
-Step 4: "Swap" with a reminder that no extra slippage setting is required, though slippage might be necessary during market volatility.
-Layout: Arrange each step with an icon or number on the left and text on the right for easy readability.
-
-Styling: Ensure each step is separated by sufficient space, with the text color matching medium gray and each step title bolded for emphasis.
-
-Add subtle box-shadow and padding to the section for additional visual separation.
+Ensure there is enough space between steps, use medium gray text (text-gray-300), and style each step title in bold.
 
 Layout and Flexbox:
-The layout should be responsive, centered using flexbox, with appropriate spacing between elements. Ensure that all content is centered both vertically and horizontally.
-The input box and the button should be placed side by side with some spacing.
+Add container class for layout to make all the element inside container class 
+Ensure that the page layout is responsive and centered using flexbox. The content should be vertically and horizontally aligned.
+The container, buttons, and input fields should be aligned and spaced appropriately using flexbox.
 Styling:
-Use a playful font like 'Comic Sans MS' for the content.
-
-Set the body background color and button backgrounds based on the selected theme, ensuring smooth hover transitions.
-
-The container should have a soft shadow for depth.
-
-Buttons should have smooth transitions, scaling slightly on hover.
-
-Ensure the page layout is responsive and neatly centered with flexbox.
-
-Note: Do not include any dark or light mode toggle buttons in the design. The page layout and theme should be based on the selected colors without providing a toggle for switching between dark and light modes.`
+Apply a playful font like 'Comic Sans MS' for the content.
+Ensure all buttons and interactive elements have smooth hover transitions.
+Ensure the page layout is mobile-responsive and visually appealing across devices.
+Note: The page design should only use the selected theme without dark or light mode toggles, and all elements should be styled with Tailwind CSS.`
 
 + inputPrompt
 
