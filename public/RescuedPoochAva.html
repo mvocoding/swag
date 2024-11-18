@@ -19,8 +19,8 @@
       }
     </style>
   </head>
-  <body class="bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-400 min-h-screen">
-    
+  <body class="bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-400 min-h-screen flex flex-col">
+
     <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full bg-purple-600/80 px-6 py-4 shadow-lg z-10">
       <div class="flex justify-between items-center">
@@ -35,7 +35,7 @@
     </nav>
 
     <!-- Main Section -->
-    <section class="flex flex-col items-center justify-center mt-20 px-6 py-12">
+    <section class="flex flex-col items-center justify-center mt-20 px-6 py-12 flex-grow">
       <img src="https://dd.dexscreener.com/ds-data/tokens/solana/CGdQeswBUFWuXjK2vUd2B1HizuDaUwuxkDk1bfcXpump/header.png?size=xl&key=0be1b4" alt="Token Image" class="rounded-lg shadow-xl max-w-xs mb-8">
       <h1 class="text-5xl font-extrabold text-yellow-300 text-shadow-lg mb-4">The Rescued Pooch</h1>
       <h2 class="text-xl text-white text-center max-w-2xl mb-6">Upon arrival, they found Ava malnourished and missing her right rear leg, which appeared recently amputated. She also had an injured left eye, severe emaciation, and other fractures that had healed abnormally. “It’s a miracle Ava survived.”</h2>
@@ -88,6 +88,11 @@
         </ol>
       </section>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-purple-600/80 py-4 text-center text-white mt-auto">
+      <p>&copy; 2024 Copyright, created by BubbleAI</p>
+    </footer>
 
     <script>
       function copyToClipboard(text) {
