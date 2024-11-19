@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token AI Website Builder - Create A Website In Minutes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
+      color: #F2F2F2;
+      overflow-x: hidden;
+    }
+
+    a {
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFD700;
+    }
+
+    button {
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #FFBB33;
+    }
+
+    input {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px #FFD700;
+    }
+
+    .hero {
+      background: url('https://dd.dexscreener.com/ds-data/tokens/solana/GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump/header.png?key=1d6b00') center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      background: rgba(15, 32, 39, 0.8);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .hero-content {
+      z-index: 1;
+      text-align: center;
+    }
+
+    .cta-button {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full bg-opacity-90 bg-[#0F2027] px-6 py-4 shadow-lg z-10">
+    <div class="flex justify-between items-center">
+      <a class="text-2xl font-bold flex items-center gap-2">
+        <img class="rounded-full w-12"
+          src="https://dd.dexscreener.com/ds-data/tokens/solana/GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump.png?size=lg&key=1d6b00"
+          alt="Token Logo">
+        EMC
+      </a>
+      <ul class="flex space-x-6">
+        <li><a href="https://x.com/i/communities/1858590781319139538"
+            class="text-[#B2D7EE] text-lg hover:text-[#FFD700]">Twitter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero relative text-white flex flex-col items-center justify-center">
+    <div class="hero-overlay"></div>
+    <div class="hero-content pt-40 pb-8">
+      <h1 class="text-6xl font-extrabold mb-4 text-[#FFD700] tracking-wide animate-bounce">Euphoria = Meme × Community²
+      </h1>
+      <div class="mb-8">
+        <div class="max-w-2xl mx-auto space-y-6">
+          <!-- Tweet Card -->
+          <div
+            class="bg-white rounded-lg shadow-lg border border-gray-300 p-6 transition-transform transform hover:scale-[1.02]">
+            <div class="flex items-start gap-4">
+              <!-- Profile Image -->
+              <img src="https://pbs.twimg.com/profile_images/1744289390736613378/alcfxov3_400x400.jpg" alt="Profile"
+                class="w-12 h-12 rounded-full" />
+              <div class="flex-1">
+                <!-- Header -->
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="font-bold text-gray-900 hover:underline cursor-pointer">Binance</span>
+                    <span class="text-sm text-gray-500 ml-2">@binance</span>
+                  </div>
+                </div>
+                <!-- Content -->
+                <p class="text-gray-800 leading-relaxed text-left">
+                  We've got it figured out...
+                </p>
+                <!-- Image -->
+                <a href="https://x.com/binance/status/1853859990596911130/photo/1" target="_blank"
+                  class="block mt-4 overflow-hidden rounded-lg">
+                  <img src="https://pbs.twimg.com/media/Gbo71gxWsAAAoTn?format=jpg" alt="Tweet Media"
+                    class="w-full h-auto object-cover hover:opacity-80 transition-opacity" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="https://pump.fun/coin/GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump"
+          class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center flex-1 min-w-[200px]">
+          <img src="/images/pumpfun.png" alt="" class="w-6 h-6">
+          Pump.Fun
+        </a>
+        <a href="https://raydium.io/swap/?inputMint=sol&outputMint=GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump"
+          class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center flex-1 min-w-[200px]">
+          <img src="/images/raydium.svg" alt="" class="w-6 h-6">
+          Raydium
+        </a>
+        <a href="https://jup.ag/swap/SOL-GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump"
+          class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center flex-1 min-w-[200px]">
+          <img src="/images/jug.svg" alt="" class="w-6 h-6">
+          Jup
+        </a>
+        <a href="https://dexscreener.com/solana/GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump"
+          class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center flex-1 min-w-[200px]">
+          <img src="/images/dexscreener.svg" alt="" class="w-6 h-6">
+          DexScreener
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copy Section -->
+  <div class="flex flex-col items-center justify-center py-12 px-6">
+    <h2 class="text-3xl font-bold mb-6 text-[#FFD700]">Copy Contract Address</h2>
+    <div class="flex items-center justify-center gap-4">
+      <input type="text" value="GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump"
+        class="w-96 bg-[#F2F2F2] text-[#0F2027] rounded-lg px-6 py-3 text-lg" readonly>
+      <button onclick="copyToClipboard('GhE3jvBtMNLhYyqSxDYYMHWUgQD7RMpEkoqaMmRHpump')"
+        class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-8 py-4 rounded-full shadow-lg text-lg">Copy</button>
+    </div>
+  </div>
+
+  <!-- How to Buy Section -->
+  <section id="how-to-buy" class="mt-12 bg-[#F2F2F2] p-8 rounded-lg shadow-2xl max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-[#FFD700] mb-8">How to Buy</h2>
+    <ol class="flex flex-col gap-8 text-[#0F2027] text-left">
+      <li class="flex items-center gap-6">
+        <span
+          class="bg-[#B2D7EE] text-[#0F2027] font-bold rounded-full w-12 h-12 flex justify-center items-center text-2xl">1</span>
+        <div class="text-lg">
+          <h3 class="font-bold text-2xl">Create a Wallet</h3>
+          <p>Download Phantom Wallet from the App Store or Google Play for mobile, or as a browser extension for
+            desktop.</p>
+        </div>
+      </li>
+      <li class="flex items-center gap-6">
+        <span
+          class="bg-[#B2D7EE] text-[#0F2027] font-bold rounded-full w-12 h-12 flex justify-center items-center text-2xl">2</span>
+        <div class="text-lg">
+          <h3 class="font-bold text-2xl">Get Some SOL</h3>
+          <p>Ensure you have sufficient SOL in your wallet to swap tokens.</p>
+        </div>
+      </li>
+      <li class="flex items-center gap-6">
+        <span
+          class="bg-[#B2D7EE] text-[#0F2027] font-bold rounded-full w-12 h-12 flex justify-center items-center text-2xl">3</span>
+        <div class="text-lg">
+          <h3 class="font-bold text-2xl">Go to Pump.Fun</h3>
+          <p>Visit the website, connect your wallet, and paste the token address.</p>
+        </div>
+      </li>
+      <li class="flex items-center gap-6">
+        <span
+          class="bg-[#B2D7EE] text-[#0F2027] font-bold rounded-full w-12 h-12 flex justify-center items-center text-2xl">4</span>
+        <div class="text-lg">
+          <h3 class="font-bold text-2xl">Swap</h3>
+          <p>Complete the swapping process and adjust slippage settings as needed.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0F2027] py-6 text-center text-white">
+    <p>&copy; 2024 EMC Token - Built with ❤️ by BubbleAI</p>
+  </footer>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Contract address copied!');
+      }).catch(() => {
+        alert('Failed to copy contract address!');
+      });
+    }
+  </script>
+</body>
+
+</html>
