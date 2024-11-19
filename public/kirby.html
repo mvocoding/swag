@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirby's Elephant Meme Token</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Animation */
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .bounce {
+      animation: bounce 1s infinite;
+    }
+
+    /* Color palette to match zoo theme */
+    :root {
+      --green-primary: #4CAF50;
+      --green-secondary: #81C784;
+      --brown-primary: #795548;
+      --yellow-accent: #FFEB3B;
+      --text-primary: #3E2723;
+      --text-secondary: #5D4037;
+    }
+
+    /* Custom button and text styles */
+    .cta-button {
+      background-color: var(--yellow-accent);
+      color: var(--brown-primary);
+      padding: 12px 24px;
+      font-size: 1.125rem;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--green-primary);
+      color: white;
+    }
+
+    /* Video container styling */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 8px solid var(--brown-primary);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-green-50 font-sans text-gray-800">
+
+  <!-- Top Menu -->
+  <nav class="bg-green-600 text-white p-4 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-extrabold">Kirby's The Elephant 🐘</a>
+      <ul class="flex space-x-6">
+        <li><a href="https://t.me/KirbyOnSolana" class="hover:text-yellow-300 transition">Telegram</a></li>
+        <li><a href="https://x.com/kirbyelephant" class="hover:text-yellow-300 transition">Twitter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Call to Action -->
+  <section id="hero" class="bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-center py-20">
+    <h1 class="text-5xl font-extrabold text-white mb-4 animate__animated animate__fadeInUp">Meet Kirby, the Elephant! 🐘
+    </h1>
+    <p class="text-xl text-white mb-6">New baby elephant named Kirby born at the Houston Zoo!
+    </p>
+    <div class="video-container">
+      <!-- Replace with your actual YouTube/Vimeo video URL -->
+      <iframe width="560" height="500" src="https://www.youtube.com/embed/dMnKfjTan9o?si=Vuk-aoualiEDRk9Y"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <!-- Copy Button Section -->
+    <div class="flex items-center justify-center gap-4 mt-5">
+      <input type="text" value="AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump"
+        class="w-96 bg-white/20 text-white rounded-lg px-6 py-3 text-lg" readonly>
+      <button onclick="copyToClipboard('AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump')"
+        class="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full shadow-lg text-lg">Copy</button>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-8 mt-6 max-w-3xl mx-auto">
+      <!-- Each button will take 45% of the container width to fit two per row -->
+      <a href="https://pump.fun/coin/AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump"
+        class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center w-[45%] min-w-[200px]">
+        <img src="/images/pumpfun.png" alt="" class="w-6 h-6">
+        Pump.Fun
+      </a>
+      <a href="https://raydium.io/swap/?inputMint=sol&outputMint=AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump"
+        class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center w-[45%] min-w-[200px]">
+        <img src="/images/raydium.svg" alt="" class="w-6 h-6">
+        Raydium
+      </a>
+      <a href="https://jup.ag/swap/SOL-AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump"
+        class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center w-[45%] min-w-[200px]">
+        <img src="/images/jug.svg" alt="" class="w-6 h-6">
+        Jup
+      </a>
+      <a href="https://dexscreener.com/solana/AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump"
+        class="bg-[#FFD700] hover:bg-[#FFC700] text-[#0F2027] px-4 py-4 rounded-full shadow-lg text-xl flex gap-2 items-center justify-center w-[45%] min-w-[200px]">
+        <img src="/images/dexscreener.svg" alt="" class="w-6 h-6">
+        DexScreener
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="bg-green-100 py-20">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold text-green-600 mb-6">Kirby's Elephant Photo Gallery 📸🐘</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Gallery Item 1 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+          <img src="https://pbs.twimg.com/media/Gcsx19UWEAAQtls?format=jpg&name=900x900" alt="Elephant Photo 1"
+            class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            onclick="openLightbox();currentSlide(1)">
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+          <img src="https://pbs.twimg.com/media/GctJRHXXwAAJwVw?format=jpg&name=medium" alt="Elephant Photo 2"
+            class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            onclick="openLightbox();currentSlide(2)">
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+          <img
+            src="https://dd.dexscreener.com/ds-data/tokens/solana/AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump/header.png?key=88fb1d"
+            alt="Elephant Photo 3"
+            class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            onclick="openLightbox();currentSlide(3)">
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+          <img src="https://pbs.twimg.com/media/Gct8_lFWMAExu2t?format=png" alt="Elephant Photo 4"
+            class="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            onclick="openLightbox();currentSlide(4)">
+        </div>
+
+        <!-- Add more items here as needed -->
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox"
+        class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center hidden">
+        <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" onclick="closeLightbox()">×</span>
+        <div class="relative w-full max-w-3xl p-4">
+          <div class="flex justify-center">
+            <img id="lightbox-image" class="w-full h-auto rounded-lg shadow-lg" src="" alt="Lightbox Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Function to open the lightbox
+    function openLightbox() {
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
+
+    // Function to change the image inside the lightbox
+    function currentSlide(index) {
+      const images = [
+        'https://pbs.twimg.com/media/Gcsx19UWEAAQtls?format=jpg&name=900x900',
+        'https://pbs.twimg.com/media/GctJRHXXwAAJwVw?format=jpg&name=medium',
+        'https://dd.dexscreener.com/ds-data/tokens/solana/AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump/header.png?key=88fb1d',
+        'https://pbs.twimg.com/media/Gct8_lFWMAExu2t?format=png'
+      ];
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = images[index - 1]; // Set the image source based on the clicked index
+    }
+  </script>
+
+  <!-- How to Buy Section -->
+  <section id="how-to-buy" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold text-green-600 mb-6">How to Buy Kirby’s Meme Token</h2>
+      <div class="space-y-6 text-left text-lg">
+        <p>1. Download and set up a crypto wallet like Phantom or Solflare.</p>
+        <p>2. Fund your wallet with SOL (Solana).</p>
+        <p>3. Visit a decentralized exchange (DEX) like Raydium.</p>
+        <p>4. Search for Kirby’s Meme Token using the token’s address.</p>
+        <p>5. Swap your SOL for Kirby’s Meme Token.</p>
+        <p>6. Enjoy the journey with Kirby! 🐘🎉</p>
+      </div>
+      <a href="https://raydium.io/swap/?inputMint=sol&outputMint=AXTCLqqupJN3YWikgDtAZxRKWizsbePDyV9XtkDtpump" target="_blank" class="cta-button mt-10">Trade on Raydium</a>
+    </div>
+  </section>
+
+
+
+
+  <!-- Bottom Menu (Footer) -->
+  <footer class="bg-green-600 text-white py-6 text-center">
+    <p>&copy; 2024 Kirby's Meme Token | All Rights Reserved</p>
+  </footer>
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Contract address copied!');
+      }, () => {
+        alert('Failed to copy contract address!');
+      });
+    }
+  </script>
+
+</body>
+
+</html>
