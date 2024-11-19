@@ -47,6 +47,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
     }
 
     .hero-overlay {
@@ -69,7 +70,6 @@
     }
 
     @keyframes pulse {
-
       0%,
       100% {
         transform: scale(1);
@@ -79,6 +79,57 @@
         transform: scale(1.1);
       }
     }
+
+    /* Infinite scrolling text for token name */
+    .scrolling-text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      animation: slideTop 20s linear infinite;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .scrolling-text-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      animation: slideBottom 20s linear infinite;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    /* Add multiple instances of E=MC² */
+    .scrolling-text span, .scrolling-text-bottom span {
+      margin-right: 50px;
+    }
+
+    @keyframes slideTop {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes slideBottom {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
   </style>
 </head>
 
@@ -107,7 +158,29 @@
   <!-- Hero Section -->
   <section class="hero relative text-white flex flex-col items-center justify-center">
     <div class="hero-overlay"></div>
-    <div class="hero-content pt-40 pb-8">
+    <div class="hero-content pt-40 pb-20">
+      <!-- Scrolling Token Name Animation -->
+      <div class="scrolling-text">
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+      </div>
+
+      <div class="scrolling-text-bottom ">
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+        <span>E=MC²</span>
+      </div>
       <h1 class="text-6xl font-extrabold mb-4 text-[#FFD700] tracking-wide animate-bounce">Euphoria = Meme × Community²
       </h1>
       <div class="mb-8">
