@@ -54,7 +54,7 @@ class App extends React.Component {
     document.body.classList.toggle('dark', this.state.isDarkMode)
   }
 
-  checkDisplayMode () {
+  checkDisplayMode() {
     const getDisplayModeFromLocal = localStorage.getItem(this.state.DARK_MODE_STORAGE_KEY)
     try {
       const parsedDisplayMode = JSON.parse(getDisplayModeFromLocal)
@@ -67,7 +67,7 @@ class App extends React.Component {
     }
   }
 
-  checkLanguageData () {
+  checkLanguageData() {
     const getLanguageFromLocal = localStorage.getItem(this.state.LANGUAGE_STORAGE_KEY)
     try {
       const parsedLanguage = JSON.parse(getLanguageFromLocal)
@@ -80,24 +80,24 @@ class App extends React.Component {
     }
   }
 
-  setDisplayMode () {
+  setDisplayMode() {
     this.setState(prevState => ({
       isDarkMode: !prevState.isDarkMode
     }), () => this.saveDisplayMode(this.state.isDarkMode))
   }
 
-  changeLanguage (lang) {
+  changeLanguage(lang) {
     i18n.changeLanguage(lang)
     this.setState({ selectedLanguage: lang }, () => this.saveLanguageData(lang))
   }
 
-  saveDisplayMode (selectedDisplayMode) {
+  saveDisplayMode(selectedDisplayMode) {
     if (isStorageExist(i18n.t('browser_warning'))) {
       localStorage.setItem(this.state.DARK_MODE_STORAGE_KEY, JSON.stringify(selectedDisplayMode))
     }
   }
 
-  saveLanguageData (selectedLanguage) {
+  saveLanguageData(selectedLanguage) {
     if (isStorageExist(i18n.t('browser_warning'))) {
       localStorage.setItem(this.state.LANGUAGE_STORAGE_KEY, JSON.stringify(selectedLanguage))
     }
@@ -147,7 +147,7 @@ class App extends React.Component {
     this.setState(prevState => ({ ...prevState, geminiApiKey: event.target.value }))
   }
 
-  changeVisibilityPassword (event) {
+  changeVisibilityPassword(event) {
     event.preventDefault()
     if (this.state.inputType === 'password') {
       this.setState({ inputType: 'text' })
@@ -232,7 +232,7 @@ class App extends React.Component {
               saveUserData={this.saveUserData.bind(this)}
               resetUserData={this.resetUserData.bind(this)}
             />
-          }/>
+          } />
           <Route path="/prompt" element={
             <HomePage
               t={i18n.t}
@@ -248,12 +248,12 @@ class App extends React.Component {
               saveUserData={this.saveUserData.bind(this)}
               resetUserData={this.resetUserData.bind(this)}
             />
-          }/>
-          <Route path="/preview" element={<FullPreviewPage t={i18n.t}/>}/>
-          <Route path="*" element={<NoPage t={i18n.t}/>}/>
-          
+          } />
+          <Route path="/preview" element={<FullPreviewPage t={i18n.t} />} />
+          <Route path="*" element={<NoPage t={i18n.t} />} />
+
           <Route path="/:page" element={({ match }) => {
-            const page = match.params.page;
+            const page = match.params.page.toLowerCase();
             return RedirectToHTML(`/${page}.html`);
           }} />
 
