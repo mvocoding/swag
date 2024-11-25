@@ -28,33 +28,54 @@
 
     function createPopup() {
         // Create popup HTML structure using Tailwind CSS
-        const popupHTML = `
-            <div id="popup" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-                <div class="bg-white w-3/4 h-3/4 rounded-lg shadow-lg overflow-y-auto p-6 relative">
-                    <button id="closePopup" class="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
-                    <h2 class="text-2xl font-bold mb-4 text-gray-800">$PFBI - PumpFun Bureau of Investigation</h2>
-                    <p class="text-gray-600 mb-6">
-                        I created a small extension to record all the livestreams on PumpFun. All the videos will be recorded and posted on X for future investigation.
-                    </p>
-                    <div id="recordingTimer" class="text-red-500 text-lg font-semibold mb-4"></div>
-                    <div class="flex space-x-4 mb-6">
-                        <button id="startRecording" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
-                            Start Recording
-                        </button>
-                        <button id="stopRecording" class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" disabled>
-                            Stop Recording
-                        </button>
-                        <button id="downloadVideo" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" disabled>
-                            Download Video
-                        </button>
-                    </div>
-                    <div id="videoPreviewContainer" class="hidden">
-                        <h3 class="text-lg font-bold mb-2">Recorded Video Preview</h3>
-                        <video id="videoPreview" class="w-full rounded-lg border border-gray-300" controls></video>
-                    </div>
-                </div>
-            </div>
-        `;
+        const popupHTML = `<!-- Popup Container -->
+<div id="popup" class="fixed top-10 left-1/2 transform -translate-x-1/2 w-3/4 h-3/4 bg-white z-50 shadow-lg rounded-lg p-8 overflow-y-auto flex flex-col">
+    <!-- Close Button -->
+    <div class="w-full text-right">
+        <button id="closePopup" class="text-xl font-semibold text-gray-500 hover:text-gray-800 focus:outline-none">&times;</button>
+    </div>
+
+    <!-- Title and Description -->
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFBI - PumpFun Bureau of Investigation</h2>
+    <p class="text-lg text-gray-600 mb-6">
+        I created a simple extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
+        <br>
+        <strong>Buy $PFBI to support real DEV!</strong>
+    </p>
+
+    <!-- How It Works Section (Horizontal Steps) -->
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4">How it Works</h3>
+    <div class="flex space-x-6 mb-6">
+        <div class="flex items-center justify-center w-1/3 h-20 bg-blue-100 text-center text-lg font-semibold text-blue-800 rounded-lg shadow-md p-4">
+            <span class="text-sm">Step 1: Detect new stream</span>
+        </div>
+        <div class="flex items-center justify-center w-1/3 h-20 bg-green-100 text-center text-lg font-semibold text-green-800 rounded-lg shadow-md p-4">
+            <span class="text-sm">Step 2: PFBI starts recording</span>
+        </div>
+        <div class="flex items-center justify-center w-1/3 h-20 bg-red-100 text-center text-lg font-semibold text-red-800 rounded-lg shadow-md p-4">
+            <span class="text-sm">Step 3: Post on X</span>
+        </div>
+    </div>
+
+    <!-- Buttons for Recording -->
+    <div class="flex gap-4 mt-6">
+        <button id="startRecording" class="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Start Recording
+        </button>
+        <button id="stopRecording" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300" disabled>
+            Stop Recording
+        </button>
+        <button id="downloadVideo" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300" disabled>
+            Download Video
+        </button>
+    </div>
+
+    <!-- Recorded Video Preview -->
+    <div id="videoPreviewContainer" class="mt-8 hidden">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Recorded Video Preview</h3>
+        <video id="videoPreview" class="w-full h-auto" controls></video>
+    </div>
+</div>`;
 
         // Inject popup into the body
         const popupContainer = document.createElement("div");
