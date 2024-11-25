@@ -3,33 +3,54 @@
     let stream = null;
     let mediaRecorder = null;
     let recordedBlobs = [];
+    let startTime = null;
+    let timerInterval = null;
+
+    function formatDuration(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+    }
+
+    function startTimer() {
+        const timerElement = document.getElementById("recordingTimer");
+        startTime = Date.now();
+        timerInterval = setInterval(() => {
+            const elapsedSeconds = Math.floor((Date.now() - startTime) / 1000);
+            timerElement.textContent = `Recording... ${formatDuration(elapsedSeconds)}`;
+        }, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        document.getElementById("recordingTimer").textContent = "";
+    }
 
     function createPopup() {
-        // Create popup HTML structure
+        // Create popup HTML structure using Tailwind CSS
         const popupHTML = `
-            <div id="popup" style="position: fixed; top: 10%; left: 50%; transform: translateX(-50%); width: 75%; height: 75%; background-color: white; z-index: 1000; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; align-items: flex-start; overflow-y: auto;">
-                <div style="width: 100%; text-align: right;">
-                    <button id="closePopup" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
-                </div>
-                <h2 style="margin-bottom: 8px; font-size: 24px;">$PFBI - PumpFun Bureau of Investigation</h2>
-                <p style="margin-bottom: 16px; font-size: 16px;">
-                    I created a small extension to record all the livestreams on PumpFun. All the videos will be recorded and posted on X for future investigation.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 16px; width: 100%;">
-                    <div style="display: flex; gap: 12px;">
-                        <button id="startRecording" style="padding: 10px 20px; background-color: #34d399; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+            <div id="popup" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+                <div class="bg-white w-3/4 h-3/4 rounded-lg shadow-lg overflow-y-auto p-6 relative">
+                    <button id="closePopup" class="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-800">$PFBI - PumpFun Bureau of Investigation</h2>
+                    <p class="text-gray-600 mb-6">
+                        I created a small extension to record all the livestreams on PumpFun. All the videos will be recorded and posted on X for future investigation.
+                    </p>
+                    <div id="recordingTimer" class="text-red-500 text-lg font-semibold mb-4"></div>
+                    <div class="flex space-x-4 mb-6">
+                        <button id="startRecording" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
                             Start Recording
                         </button>
-                        <button id="stopRecording" style="padding: 10px 20px; background-color: #f87171; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
+                        <button id="stopRecording" class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" disabled>
                             Stop Recording
                         </button>
-                        <button id="downloadVideo" style="padding: 10px 20px; background-color: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
+                        <button id="downloadVideo" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" disabled>
                             Download Video
                         </button>
                     </div>
-                    <div id="videoPreviewContainer" style="margin-top: 16px; display: none;">
-                        <h3 style="font-size: 20px; margin-bottom: 8px;">Recorded Video Preview</h3>
-                        <video id="videoPreview" style="width: 100%; height: auto;" controls></video>
+                    <div id="videoPreviewContainer" class="hidden">
+                        <h3 class="text-lg font-bold mb-2">Recorded Video Preview</h3>
+                        <video id="videoPreview" class="w-full rounded-lg border border-gray-300" controls></video>
                     </div>
                 </div>
             </div>
@@ -43,36 +64,26 @@
         // Attach event listeners to popup buttons
         document.getElementById("closePopup").addEventListener("click", () => {
             popupContainer.remove();
+            stopTimer();
         });
 
         document.getElementById("startRecording").addEventListener("click", () => {
             startRecording();
             document.getElementById("startRecording").disabled = true;
             document.getElementById("stopRecording").disabled = false;
+            startTimer();
         });
 
         document.getElementById("stopRecording").addEventListener("click", () => {
             stopRecording();
             document.getElementById("stopRecording").disabled = true;
             document.getElementById("downloadVideo").disabled = false;
+            stopTimer();
             showRecordedVideo();
         });
 
         document.getElementById("downloadVideo").addEventListener("click", () => {
             startDownload();
-        });
-
-        // Add hover effects for all buttons
-        const buttons = popupContainer.querySelectorAll("button");
-        buttons.forEach(button => {
-            button.addEventListener("mouseover", () => {
-                button.style.backgroundColor = "#1e3a8a"; // Darker shade
-            });
-            button.addEventListener("mouseout", () => {
-                if (button.id === "startRecording") button.style.backgroundColor = "#34d399";
-                else if (button.id === "stopRecording") button.style.backgroundColor = "#f87171";
-                else if (button.id === "downloadVideo") button.style.backgroundColor = "#3b82f6";
-            });
         });
     }
 
@@ -124,7 +135,7 @@
         const videoPreviewContainer = document.getElementById("videoPreviewContainer");
         const videoPreview = document.getElementById("videoPreview");
         videoPreview.src = videoURL;
-        videoPreviewContainer.style.display = "block";
+        videoPreviewContainer.classList.remove("hidden");
     }
 
     // Continuously check for the presence of a video element
