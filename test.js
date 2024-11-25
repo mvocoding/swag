@@ -11,17 +11,22 @@
                 <div style="width: 100%; text-align: right;">
                     <button id="closePopup" style="background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
                 </div>
-                <h2 style="margin-bottom: 16px; font-size: 24px;">Video Recorder</h2>
-                <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
-                    <button id="startRecording" style="padding: 10px 20px; background-color: #34d399; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
-                        Start Recording
-                    </button>
-                    <button id="stopRecording" style="padding: 10px 20px; background-color: #f87171; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
-                        Stop Recording
-                    </button>
-                    <button id="downloadVideo" style="padding: 10px 20px; background-color: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
-                        Download Video
-                    </button>
+                <h2 style="margin-bottom: 8px; font-size: 24px;">$PFBI - PumpFun Bureau of Investigation</h2>
+                <p style="margin-bottom: 16px; font-size: 16px;">
+                    I created a small extension to record all the livestreams on PumpFun. All the videos will be recorded and posted on X for future investigation.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 16px; width: 100%;">
+                    <div style="display: flex; gap: 12px;">
+                        <button id="startRecording" style="padding: 10px 20px; background-color: #34d399; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+                            Start Recording
+                        </button>
+                        <button id="stopRecording" style="padding: 10px 20px; background-color: #f87171; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
+                            Stop Recording
+                        </button>
+                        <button id="downloadVideo" style="padding: 10px 20px; background-color: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" disabled>
+                            Download Video
+                        </button>
+                    </div>
                     <div id="videoPreviewContainer" style="margin-top: 16px; display: none;">
                         <h3 style="font-size: 20px; margin-bottom: 8px;">Recorded Video Preview</h3>
                         <video id="videoPreview" style="width: 100%; height: auto;" controls></video>
