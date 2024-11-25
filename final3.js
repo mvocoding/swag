@@ -32,11 +32,7 @@
             <div id="popup" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                 <div class="bg-white w-3/4 h-3/4 rounded-lg shadow-lg overflow-y-auto p-6 relative">
                     <button id="closePopup" class="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
-            <div class="flex items-center gap-2 ">
-                <img src="https://pbs.twimg.com/profile_images/1806035978055720960/fmA0xNz0_400x400.jpg" class="rounded-full size-16 " alt="">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFBI - PumpFun Bureau of Investigation</h2>
-            </div>
-
             <p class="text-lg text-gray-600 mb-6">
                 I created a simple extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
                 <br>
