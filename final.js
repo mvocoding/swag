@@ -162,7 +162,7 @@
         videoPreview.src = videoURL;
         videoPreviewContainer.classList.remove("hidden");
     }
-
+    debugger;
     // Continuously check for the presence of a video element
     const videoCheckerInterval = setInterval(() => {
         video = document.querySelector("video");
