@@ -32,11 +32,11 @@
             <div id="popup" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                 <div class="bg-white w-3/4 h-3/4 rounded-lg shadow-lg overflow-y-auto p-6 relative">
                     <button id="closePopup" class="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFBI - PumpFun Bureau of Investigation</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFD - PumpFun Detective</h2>
             <p class="text-lg text-gray-600 mb-6">
-                I created a simple extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
+                I created an extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
                 <br>
-                <strong>Buy $PFBI to support real DEV!</strong>
+                <strong>Buy $PFD to support real DEV!</strong>
             </p>
                                 <h3 class="text-2xl font-semibold text-gray-800 mb-4">How it Works</h3>
             <div class="flex space-x-6 mb-6">
@@ -44,7 +44,7 @@
                     <span class="text-sm">Step 1: Detect new stream</span>
                 </div>
                 <div class="flex items-center justify-center w-1/3 h-20 bg-green-100 text-center text-lg font-semibold text-green-800 rounded-lg shadow-md p-4">
-                    <span class="text-sm">Step 2: PFBI starts recording</span>
+                    <span class="text-sm">Step 2: PFD starts recording</span>
                 </div>
                 <div class="flex items-center justify-center w-1/3 h-20 bg-red-100 text-center text-lg font-semibold text-red-800 rounded-lg shadow-md p-4">
                     <span class="text-sm">Step 3: Post on X</span>
