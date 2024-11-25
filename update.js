@@ -36,6 +36,19 @@
                     <p class="text-gray-600 mb-6">
                         I created a small extension to record all the livestreams on PumpFun. All the videos will be recorded and posted on X for future investigation.
                     </p>
+                                <h3 class="text-2xl font-semibold text-gray-800 mb-4">How it Works</h3>
+            <div class="flex space-x-6 mb-6">
+                <div class="flex items-center justify-center w-1/3 h-20 bg-blue-100 text-center text-lg font-semibold text-blue-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 1: Detect new stream</span>
+                </div>
+                <div class="flex items-center justify-center w-1/3 h-20 bg-green-100 text-center text-lg font-semibold text-green-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 2: PFBI starts recording</span>
+                </div>
+                <div class="flex items-center justify-center w-1/3 h-20 bg-red-100 text-center text-lg font-semibold text-red-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 3: Post on X</span>
+                </div>
+            </div>
+            
                     <div id="recordingTimer" class="text-red-500 text-lg font-semibold mb-4"></div>
                     <div class="flex space-x-4 mb-6">
                         <button id="startRecording" class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600">
