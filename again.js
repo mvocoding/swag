@@ -27,59 +27,59 @@
     }
 
     function createPopup() {
-        // Create popup HTML structure using Tailwind CSS
+        // Ensure the popup HTML structure is correctly injected
         const popupHTML = `<!-- Popup Container -->
-<div id="popup" class="fixed top-10 left-1/2 transform -translate-x-1/2 w-3/4 h-3/4 bg-white z-50 shadow-lg rounded-lg p-8 overflow-y-auto flex flex-col">
-    <!-- Close Button -->
-    <div class="w-full text-right">
-        <button id="closePopup" class="text-xl font-semibold text-gray-500 hover:text-gray-800 focus:outline-none">&times;</button>
-    </div>
+        <div id="popup" class="fixed top-10 left-1/2 transform -translate-x-1/2 w-3/4 h-3/4 bg-white z-50 shadow-lg rounded-lg p-8 overflow-y-auto flex flex-col">
+            <!-- Close Button -->
+            <div class="w-full text-right">
+                <button id="closePopup" class="text-xl font-semibold text-gray-500 hover:text-gray-800 focus:outline-none">&times;</button>
+            </div>
 
-    <!-- Title and Description -->
-    <div class="flex items-center gap-2 ">
-      <img src="https://pbs.twimg.com/profile_images/1806035978055720960/fmA0xNz0_400x400.jpg" class="rounded-full size-16 " alt="">
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFBI - PumpFun Bureau of Investigation</h2>
-    </div>
+            <!-- Title and Description -->
+            <div class="flex items-center gap-2 ">
+                <img src="https://pbs.twimg.com/profile_images/1806035978055720960/fmA0xNz0_400x400.jpg" class="rounded-full size-16 " alt="">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">$PFBI - PumpFun Bureau of Investigation</h2>
+            </div>
 
-    <p class="text-lg text-gray-600 mb-6">
-        I created a simple extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
-        <br>
-        <strong>Buy $PFBI to support real DEV!</strong>
-    </p>
+            <p class="text-lg text-gray-600 mb-6">
+                I created a simple extension that records all the livestreams on PumpFun. Every video is saved and automatically posted on X for future reference and investigation.
+                <br>
+                <strong>Buy $PFBI to support real DEV!</strong>
+            </p>
 
-    <!-- How It Works Section (Horizontal Steps) -->
-    <h3 class="text-2xl font-semibold text-gray-800 mb-4">How it Works</h3>
-    <div class="flex space-x-6 mb-6">
-        <div class="flex items-center justify-center w-1/3 h-20 bg-blue-100 text-center text-lg font-semibold text-blue-800 rounded-lg shadow-md p-4">
-            <span class="text-sm">Step 1: Detect new stream</span>
-        </div>
-        <div class="flex items-center justify-center w-1/3 h-20 bg-green-100 text-center text-lg font-semibold text-green-800 rounded-lg shadow-md p-4">
-            <span class="text-sm">Step 2: PFBI starts recording</span>
-        </div>
-        <div class="flex items-center justify-center w-1/3 h-20 bg-red-100 text-center text-lg font-semibold text-red-800 rounded-lg shadow-md p-4">
-            <span class="text-sm">Step 3: Post on X</span>
-        </div>
-    </div>
+            <!-- How It Works Section (Horizontal Steps) -->
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">How it Works</h3>
+            <div class="flex space-x-6 mb-6">
+                <div class="flex items-center justify-center w-1/3 h-20 bg-blue-100 text-center text-lg font-semibold text-blue-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 1: Detect new stream</span>
+                </div>
+                <div class="flex items-center justify-center w-1/3 h-20 bg-green-100 text-center text-lg font-semibold text-green-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 2: PFBI starts recording</span>
+                </div>
+                <div class="flex items-center justify-center w-1/3 h-20 bg-red-100 text-center text-lg font-semibold text-red-800 rounded-lg shadow-md p-4">
+                    <span class="text-sm">Step 3: Post on X</span>
+                </div>
+            </div>
 
-    <!-- Buttons for Recording -->
-    <div class="flex gap-4 mt-6">
-        <button id="startRecording" class="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Start Recording
-        </button>
-        <button id="stopRecording" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300" disabled>
-            Stop Recording
-        </button>
-        <button id="downloadVideo" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300" disabled>
-            Download Video
-        </button>
-    </div>
+            <!-- Buttons for Recording -->
+            <div class="flex gap-4 mt-6">
+                <button id="startRecording" class="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+                    Start Recording
+                </button>
+                <button id="stopRecording" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300" disabled>
+                    Stop Recording
+                </button>
+                <button id="downloadVideo" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300" disabled>
+                    Download Video
+                </button>
+            </div>
 
-    <!-- Recorded Video Preview -->
-    <div id="videoPreviewContainer" class="mt-8 hidden">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">Recorded Video Preview</h3>
-        <video id="videoPreview" class="w-full h-auto" controls></video>
-    </div>
-</div>`;
+            <!-- Recorded Video Preview -->
+            <div id="videoPreviewContainer" class="mt-8 hidden">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Recorded Video Preview</h3>
+                <video id="videoPreview" class="w-full h-auto" controls></video>
+            </div>
+        </div>`;
 
         // Inject popup into the body
         const popupContainer = document.createElement("div");
@@ -162,7 +162,7 @@
         videoPreview.src = videoURL;
         videoPreviewContainer.classList.remove("hidden");
     }
-    debugger;
+
     // Continuously check for the presence of a video element
     const videoCheckerInterval = setInterval(() => {
         video = document.querySelector("video");
@@ -173,7 +173,7 @@
                 console.error("Failed to capture video stream.");
                 return;
             }
-            createPopup();
+            createPopup(); // Ensure the popup is created
         }
     }, 1000);
 })();
