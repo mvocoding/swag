@@ -28,7 +28,7 @@ class App extends React.Component {
       selectedLanguage: 'en',
       inputType: 'password',
       userName: 'Pump.Fun',
-      geminiApiKey: 'AIzaSyBeBlbyM14AnijRWH1W2ezSVX2Q477RFIk',
+      geminiApiKey: 'AIzaSyB8za6aavT5iAe8CaJ4Y9ZYWgeXWrycCyk',
       isDarkMode: false,
       isUserDataEntered: false,
       isFocused: false,

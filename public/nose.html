@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Burger+Free&display=swap" rel="stylesheet">
+  <title>NOSE - Let Me Do It For You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Shimmer effect */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .shimmer-effect {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+
+    /* Call-to-Action Buttons */
+    .cta-button {
+      display: inline-block;
+      background-color: #8bc34a;
+      /* Bright Green */
+      color: #ffffff;
+      /* White */
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background-color: #7ab03e;
+      /* Slightly Darker Green */
+    }
+
+    body {
+      font-family: 'Burger Free', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f9f1e7] text-[#5a3921]">
+
+  <!-- Top Menu -->
+  <nav class="bg-[#fff8ed] p-6">
+    <div class="content-container flex justify-between items-center">
+      <a href="#" class="text-3xl font-bold text-[#5a3921] flex items-center gap-2">
+        <img class="rounded-full size-16"
+          src="https://dd.dexscreener.com/ds-data/tokens/solana/7JKRJxWihe6Pt22L9vudAGaomD9ViXiZgXdk4v4kpump.png?size=lg&key=37b9f8"
+          alt="">
+        NOSE
+      </a>
+      <!-- Hamburger Icon for Mobile -->
+      <button class="text-[#5a3921] md:hidden" id="hamburger-menu" aria-label="Toggle navigation">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <!-- Links container -->
+      <ul class="flex space-x-6 md:flex hidden" id="nav-links">
+        <li><a href="https://t.me/nosesolana" class="hover:text-[#c5956d]">Telegram</a></li>
+        <li><a href="https://x.com/nosecto" class="hover:text-[#c5956d]">Twitter</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Menu (hidden by default) -->
+    <ul class="flex flex-col items-center space-y-4 md:hidden hidden" id="mobile-nav-links">
+      <li><a href="https://t.me/nosesolana" class="hover:text-[#c5956d]">Telegram</a></li>
+      <li><a href="https://x.com/nosecto" class="hover:text-[#c5956d]">Twitter</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="text-center py-20 bg-[#f9f1e7] text-[#5a3921]">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 shimmer-effect">NOSE - LET ME DO IT FOR YOU</h1>
+    <p class="text-xl mb-6 text-[#7f675b]">
+      Inspired by the viral TikTok Meme 'Let me do it for you' (Isn’t it the cutest?)
+      <span class="block mt-4">$NOSE is about fostering a community around this viral meme and the message it
+        shares.</span>
+    </p>
+    <div class="flex justify-center gap-6 mt-5">
+      <a href="https://x.com/nosecto" class="cta-button">Twitter</a>
+      <a href="https://t.me/nosesolana" class="cta-button">Community</a>
+      <a href="https://t.me/NOSE_memes" class="cta-button">Meme</a>
+      <a href="https://raydium.io/swap/?inputMint=sol&outputMint=7JKRJxWihe6Pt22L9vudAGaomD9ViXiZgXdk4v4kpump"
+        class="cta-button">Buy $NOSE</a>
+    </div>
+    <div class="content-container px-4 md:px-12 mt-10">
+      <div class="mx-auto max-w-screen-lg p-6 bg-[#ffe9c9] rounded-lg shadow-lg">
+        <blockquote class="tiktok-embed" cite="https://tiktok.com/@noseonsolana" data-unique-id="noseonsolana"
+          data-embed-from="embed_page" data-embed-type="creator" style="width:100%; margin: 0 auto;">
+          <section>
+            <a target="_blank" href="https://tiktok.com/@noseonsolana?refer=creator_embed"
+              class="text-[#c5956d] hover:underline">@noseonsolana</a>
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </div>
+  </header>
+
+  <!-- Meme Gallery Section -->
+  <section id="meme-gallery" class="py-20 bg-[#ffe9c9] text-center text-[#5a3921]">
+    <div class="content-container">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#c5956d] mb-6">Meme Gallery</h2>
+      <div class="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Meme 1 -->
+        <div class="bg-[#fff8ed] rounded-lg shadow-md overflow-hidden">
+          <video class="w-full cursor-pointer" onclick="openFullscreen(this)" muted loop>
+            <source src="nose 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Meme 2 -->
+        <div class="bg-[#fff8ed] rounded-lg shadow-md overflow-hidden">
+          <video class="w-full cursor-pointer" onclick="openFullscreen(this)" muted loop>
+            <source src="nose 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Video 1 -->
+        <div class="bg-[#fff8ed] rounded-lg shadow-md overflow-hidden">
+          <video class="w-full cursor-pointer" onclick="openFullscreen(this)" muted loop>
+            <source src="nose 3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Video 2 -->
+        <div class="bg-[#fff8ed] rounded-lg shadow-md overflow-hidden">
+          <video class="w-full cursor-pointer" onclick="openFullscreen(this)" muted loop>
+            <source src="nose 4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Function to open an element in fullscreen mode
+    function openFullscreen(element) {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.webkitRequestFullscreen) { // Safari
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { // IE11
+        element.msRequestFullscreen();
+      }
+    }
+  </script>
+
+
+
+  <!-- How to Buy Section -->
+  <section id="how-to-buy" class="py-20 bg-[#ffe9c9] text-center text-[#5a3921]">
+    <div class="content-container">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#c5956d] mb-6">How to Buy NOSE Token</h2>
+      <div class="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Step 1 -->
+        <div class="flex items-center p-6 bg-[#fff8ed] rounded-lg shadow-md">
+          <div
+            class="text-3xl font-bold bg-[#8bc34a] text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+            1
+          </div>
+          <p class="text-lg text-left">Download and set up a crypto wallet like Phantom or Solflare.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex items-center p-6 bg-[#fff8ed] rounded-lg shadow-md">
+          <div
+            class="text-3xl font-bold bg-[#8bc34a] text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+            2
+          </div>
+          <p class="text-lg text-left">Fund your wallet with SOL (Solana).</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex items-center p-6 bg-[#fff8ed] rounded-lg shadow-md">
+          <div
+            class="text-3xl font-bold bg-[#8bc34a] text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+            3
+          </div>
+          <p class="text-lg text-left">Visit a decentralized exchange (DEX) like Raydium.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="flex items-center p-6 bg-[#fff8ed] rounded-lg shadow-md">
+          <div
+            class="text-3xl font-bold bg-[#8bc34a] text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+            4
+          </div>
+          <p class="text-lg text-left">Search for NOSE Token using the token’s address and swap SOL for NOSE Token.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-[#fff8ed] text-[#7f675b]">
+    <p>&copy; 2024 NOSE Token. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const mobileNavLinks = document.getElementById("mobile-nav-links");
+
+    hamburgerMenu.addEventListener("click", () => {
+      mobileNavLinks.classList.toggle("hidden");
+    });
+  </script>
+</body>
+
+</html>
